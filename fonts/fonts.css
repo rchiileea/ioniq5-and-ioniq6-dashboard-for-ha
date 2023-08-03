@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'led_counter-7';
+  src: url(./led_counter-7.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "DJBGetDigital";
+  src: url(/local/djbgetdigital.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "DotsAllForNow";
+  src: url(/local/dotsallfornow.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "poxel";
+  src: url(/local/poxel.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "G7_Cube_5";
+  src: url(/local/G7_Cube_5.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "Retro";
+  src: url(/local/Retro.woff2) format('woff2');
+}
