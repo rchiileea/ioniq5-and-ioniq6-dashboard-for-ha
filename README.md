@@ -1,10 +1,9 @@
 # ioniq5-dashboard-for-ha
 custom card layouts with images for home assistant for the ionic 5
+
 First off, let me start by what you 100% need to use this,
-Download from hacs the Hyundai bluelink integration and custom brand icons,  card mod, slider-entity-row and custom button-card, also install ftp addon from addons as it will make this easier.
 
-
-
+Download from hacs the Hyundai bluelink integration, custom brand icons, card mod, slider-entity-row and custom button-card, also install ftp addon from addons as it will make this easier.
 
 
 1.	upload files from fonts into your www folder (local) (not the font folder but the files within)
