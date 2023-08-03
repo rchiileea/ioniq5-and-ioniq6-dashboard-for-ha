@@ -1,0 +1,181 @@
+mqtt:
+  host: 192.168.0.39
+  topic_prefix: frigate
+  client_id: frigate
+  user: mqttbroker
+  password: 1H@t3MqTT
+
+detectors:
+  coral1:
+    type: edgetpu
+    device: pci:0
+
+database:
+  path: /config/frigate.db
+
+cameras:
+  Driveway: # <------ Name the camera
+    ffmpeg:
+      inputs:
+        - path: rtsp://192.168.0.39:8554/Driveway?mp4 # <----- Update for your camera
+          roles:
+            - detect
+            - rtmp
+    rtmp:
+      enabled: false # <-- RTMP should be disabled if your stream is not H264
+    detect:
+      width: 3840 # <---- update for your camera's resolution
+      height: 2160  # <---- update for your camera's resolution
+      fps: 5
+    objects:
+      track:
+        - person
+        - car
+        - bird
+    motion:
+      mask:
+        - 2678,1079,2647,1043,2628,996,2611,858,2588,846,2535,912,2445,832,2364,993,2369,841,2331,827,2295,832,2255,853,2219,872,2179,884,2134,846,2082,796,2041,791,2046,741,1998,699,1944,663,1939,737,1808,604,1692,539,1666,580,1592,582,1616,625,1592,687,1685,817,2595,1411
+        - 3840,487,3840,0,3619,0,2533,0,2531,266,2875,359,2516,509,3840,1107
+        - 1457,140,1718,59,1737,0,1188,0,739,0,0,0,0,356,411,240,1171,164,1366,342,1473,349
+    zones:
+      drive:
+        coordinates: 904,1423,806,1105,798,755,1191,614,1762,508,2041,651,2761,913,2537,2026,2362,2160,1168,2160
+        objects:
+          - car
+          - person
+    record:
+      enabled: True
+      retain:
+        days: 7
+        mode: motion
+      events:
+        retain:
+          default: 14
+          mode: active_objects
+          objects:
+            car: 7
+            person: 7
+    snapshots:
+      enabled: true
+    mqtt:
+      timestamp: False
+      bounding_box: true
+      crop: True
+      quality: 100
+      height: 500
+
+  Driveway_tracking: # <------ Name the camera
+    ffmpeg:
+      inputs:
+        - path: rtsp://Hassio:1L0v3ha5510@192.168.0.13:554//h264Preview_02_main # <----- Update for your camera
+          roles:
+            - detect
+            - rtmp
+    rtmp:
+      enabled: false 
+       # <-- RTMP should be disabled if your stream is not H264
+    detect:
+      width: 3840 # <---- update for your camera's resolution
+      height: 2160  # <---- update for your camera's resolution
+      fps: 5
+    objects:
+      track:
+        - person
+    snapshots:
+      enabled: true
+    mqtt:
+      timestamp: False
+      bounding_box: true
+      crop: True
+      quality: 100
+      height: 500
+
+  Garden: # <------ Name the camera
+    ffmpeg:
+      inputs:
+        - path: rtsp://192.168.0.39:8554/Garden?mp4 # <----- Update for your camera
+          roles:
+            - detect
+            - rtmp
+    rtmp:
+      enabled: false
+       # <-- RTMP should be disabled if your stream is not H264
+    detect:
+      width: 3840 # <---- update for your camera's resolution
+      height: 2160  # <---- update for your camera's resolution
+      fps: 5
+    objects:
+      track:
+        - person
+        - cat
+        - bird
+    motion:
+      mask:
+        - 2960,1225,3107,1022,2895,855,2575,478,2394,524,2623,1123
+        - 990,354,809,365,782,459,642,470,513,494,0,637,0,0,608,0,1015,0,1875,0,1937,254,1706,246,1636,238,1534,255
+        - 3058,528,2739,492,2797,328,2956,0,3840,0,3840,1069
+        - 657,2160,702,1958,829,1545,956,1534,1053,1421,1228,1494,1350,1684,1381,1856,1344,2160
+    record:
+      enabled: True
+      retain:
+        days: 7
+        mode: motion
+      events:
+        retain:
+          default: 14
+          mode: active_objects
+          objects:
+            bird: 7
+            person: 7
+    snapshots:
+      enabled: true
+    mqtt:
+      timestamp: False
+      bounding_box: true
+      crop: True
+      quality: 100
+      height: 500
+
+  Doorbell: # <------ Name the camera
+    ffmpeg:
+      inputs:
+        - path: rtsp://192.168.0.39:8554/Doorbell?mp4 # <----- Update for your camera
+          roles:
+            - detect
+            - rtmp
+    rtmp:
+      enabled: false # <-- RTMP should be disabled if your stream is not H264
+    detect:
+      width: 1920 # <---- update for your camera's resolution
+      height: 1080 # <---- update for your camera's resolution
+      fps: 7
+    objects:
+      track:
+        - person
+        - dog
+        - cat
+        - car
+        - bird
+    record:
+      enabled: true
+      retain:
+        days: 7
+        mode: motion
+      events:
+        retain:
+          default: 14
+          mode: active_objects
+          objects:
+            car: 7
+            person: 7
+            bird: 1
+            cat: 1
+            dog: 1
+    snapshots:
+      enabled: true
+    mqtt:
+      timestamp: False
+      bounding_box: true
+      crop: True
+      quality: 100
+      height: 500

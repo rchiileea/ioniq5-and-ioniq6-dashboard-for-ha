@@ -1,0 +1,8 @@
+#ioniq5 test battery sensor
+  - platform: template
+    sensors:
+      ioniq5_battery:
+        friendly_name: 'ioniq battery state'
+        unique_id: 10n1qbatt3ry
+        value_template: >-
+          {{ states('sensor.ioniq_5_ev_battery_level') | round(-1, 'ceil', 0) | int }}
