@@ -14,8 +14,47 @@ Download from hacs the Hyundai bluelink integration, custom brand icons, card mo
 4.	copy and paste the code from the (add to configuration file) into your configuration under your sensor lines. 
 5.	Restart home assistant
 6.	Now go to any page and add card, select add manually and click on any card, then click show editor and copy and paste the code from back view card into it and save
-7.	Add another card, click show editor and copy and past the code from top view card into it, if your car is a left hand drive change the /local/ioniqb/ioniq5-top-rhd.png to /local/ioniqb/ioniq5-top-lhd.png, there are two of these lines right near the top
+7.	Add another card, click show editor and copy and past the code from top view card into it,
+For the top down view if your car is left hand drive replace the top lines.
 
+------------------------------------------------------------
+
+type: picture-elements
+image: /local/ioniqb/ioniq5-top-rhd.png
+elements:
+  - type: image
+    entity: device_tracker.ioniq5_device_tracker
+    image: /local/ioniqb/ioniq5-top-rhd.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_steering_wheel_heater
+    state_image:
+      'off': /local/ioniqb/wheel.png
+      'on': /local/ioniqb/wheel-on.png
+--------------------------------------------------------------
+
+With
+
+type: picture-elements
+image: /local/ioniqb/ioniq5-top-lhd.png
+elements:
+  - type: image
+    entity: device_tracker.ioniq5_device_tracker
+    image: /local/ioniqb/ioniq5-top-lhd.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_steering_wheel_heater
+    state_image:
+      'off': /local/ioniqb/wheel--lhd.png
+      'on': /local/ioniqb/wheel-on--lhd.png
 
 Sit back enjoy, Ill update the code if I add anymore (or if integration gets buttons added for start and stop charge in the future)
 
