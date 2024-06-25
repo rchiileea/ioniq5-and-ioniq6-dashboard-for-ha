@@ -150,7 +150,7 @@ elements:
       heigth: 100%
   - type: image
     entity: sensor.tronity_ioniq_5_plugged
-    image: /local/ioniqa/ohme.png
+    image: /local/ioniqa/ohme.png (or place in zappi.png
     style:
       left: 50%
       top: 15%
