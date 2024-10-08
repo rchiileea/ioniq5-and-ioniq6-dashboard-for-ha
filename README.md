@@ -13,7 +13,7 @@ Download from hacs the Hyundai bluelink integration, custom brand icons, card mo
 
 
 1.	upload files from fonts into your www folder (local) (not the font folder but the files within)
-2.	upload the folders ioniqa and ioniqb into your www folder (local) (not the font folder but the files within)
+2.	upload the folders ioniqa and ioniqb into your www folder (local) 
 3.	Go to settings/Dashboards and then click the 3 dots in the top right and click resources. Click add resource and paste /local/loadfonts.js (make sure javascript module is selected, then click add resource again and paste /local/fonts.css and this time select style sheet.
 4.	copy and paste the code from the (add to configuration file) into your configuration under your sensor lines. (for ioniq 6 owners, please use ioniq 6 top down view and change the sensors (marked green #  to your sensors for your car)
 5.	Restart home assistant
