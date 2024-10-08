@@ -1,86 +1,85 @@
 type: picture-elements
-image: /local/ioniqb/ioniq5-top-rhd.png
+image: /local/ioniqb/ioniq6-top-rhd.png #change to 6wheel-on-rhd.png for lhd
 elements:
   - type: image
-    entity: device_tracker.ioniq5_device_tracker
-    image: /local/ioniqb/ioniq5-top-rhd.png
+    entity: #car device tracker here
+    image: /local/ioniqb/ioniq6-top-rhd.png
     style:
       left: 50%
       top: 50%
       width: 100%
       heigth: 100%
   - type: image
-    entity: binary_sensor.ioniq_5_steering_wheel_heater
+    entity: #place your steering wheel heater sensor here
     state_image:
-      'off': /local/ioniqb/wheel.png
-      'on': /local/ioniqb/wheel-on.png
+      'on': /local/ioniqb/6wheel-on-rhd.png #change to 6wheel-on-rhd.png for lhd
     style:
       left: 50%
       top: 50%
       width: 100%
       heigth: 100%
   - type: image
-    entity: binary_sensor.ioniq_5_front_left_door
+    entity: #place front left door sensor here
     state_image:
-      'off': /local/ioniqb/ioniq-front-left.png
-      'on': /local/ioniqb/ioniq-front-left-open.png
+      'off': /local/ioniqb/ioniq6-front-left.png
+      'on': /local/ioniqb/ioniq6-front-left-open.png
     style:
       left: 50%
       top: 50%
       width: 100%
       heigth: 100%
   - type: image
-    entity: binary_sensor.ioniq_5_front_right_door
+    entity: #place front right sensor door here
     state_image:
-      'off': /local/ioniqb/ioniq-front-right.png
-      'on': /local/ioniqb/ioniq-front-right-open.png
+      'off': /local/ioniqb/ioniq6-front-right.png
+      'on': /local/ioniqb/ioniq6-front-right-open.png
     style:
       left: 50%
       top: 50%
       width: 100%
       heigth: 100%
   - type: image
-    entity: binary_sensor.ioniq_5_back_left_door
+    entity: #place left rear door sensor here
     state_image:
-      'off': /local/ioniqb/ioniq-rear-left.png
-      'on': /local/ioniqb/ioniq-rear-left-open.png
+      'off': /local/ioniqb/ioniq6-rear-left.png
+      'on': /local/ioniqb/ioniq6-rear-left-open.png
     style:
       left: 50%
       top: 50%
       width: 100%
       heigth: 100%
   - type: image
-    entity: binary_sensor.ioniq_5_back_right_door
+    entity: #place your rear right door senosr here
     state_image:
-      'off': /local/ioniqb/ioniq-rear-right.png
-      'on': /local/ioniqb/ioniq-rear-right-open.png
+      'off': /local/ioniqb/ioniq6-rear-right.png
+      'on': /local/ioniqb/ioniq6-rear-right-open.png
     style:
       left: 50%
       top: 50%
       width: 100%
       heigth: 100%
   - type: image
-    entity: binary_sensor.ioniq_5_hood
+    entity: #place your hood sensor here
     state_image:
-      'off': /local/ioniqb/ioniq-hood.png
-      'on': /local/ioniqb/ioniq-hood-open.png
+      'off': /local/ioniqb/ioniq6-hood.png
+      'on': /local/ioniqb/ioniq6-hood-open.png
     style:
       left: 50%
       top: 50%
       width: 100%
       heigth: 100%
   - type: image
-    entity: binary_sensor.ioniq_5_trunk
+    entity: #place your rear  hatch sensor here
     state_image:
-      'off': /local/ioniqb/ioniq-hatch.png
-      'on': /local/ioniqb/ioniq-hatch-open.png
+      'off': /local/ioniqb/ioniq6-hatch.png
+      'on': /local/ioniqb/ioniq6-hatch-open.png
     style:
       left: 50%
       top: 50%
       width: 100%
       heigth: 100%
   - type: custom:button-card
-    entity: binary_sensor.ioniq_5_air_conditioner
+    entity: #air conditioning sensor here
     icon: mdi:fan
     name: Climate
     tap_action:
@@ -111,7 +110,7 @@ elements:
       left: 50%
       transform: translate(-50%,-50%) scale(0.9,0.9)
   - type: custom:button-card
-    entity: sensor.ioniq_5_car_battery_level
+    entity: #place 12v sensor here
     name: 12V
     show_name: false
     show_icon: false
@@ -153,7 +152,7 @@ elements:
       left: 51%
       size: 200%
   - type: custom:button-card
-    entity: sensor.ioniq_5_car_battery_level
+    entity: #place 12v sensor here
     name: 12V
     show_name: false
     show_icon: true
@@ -189,7 +188,7 @@ elements:
       left: 37%
       size: 200%
   - type: state-icon
-    entity: binary_sensor.ioniq_5_tire_pressure_front_left
+    entity: #place front left tire presure sensor here
     icon: mdi:car-tire-alert
     style:
       '--paper-item-icon-color': green
@@ -199,7 +198,7 @@ elements:
       paper-item-icon-active-color: var(--tirecolorl)
       transform: scale(1.5,1.5)
   - type: state-icon
-    entity: binary_sensor.ioniq_5_tire_pressure_front_right
+    entity:  #place front right tire presure sensor here
     icon: mdi:car-tire-alert
     style:
       '--paper-item-icon-color': green
@@ -209,7 +208,7 @@ elements:
       paper-item-icon-active-color: var(--tirecolorr)
       transform: scale(1.5,1.5)
   - type: state-icon
-    entity: binary_sensor.ioniq_5_tire_pressure_rear_left
+    entity:  #place rear left tire presure sensor here
     icon: mdi:car-tire-alert
     style:
       top: 77.1%
@@ -218,7 +217,7 @@ elements:
       paper-item-icon-active-color: var(--tirecolorrl)
       transform: scale(1.5,1.5)
   - type: state-icon
-    entity: binary_sensor.ioniq_5_tire_pressure_rear_right
+    entity: #place rear right tire presure sensor here
     icon: mdi:car-tire-alert
     style:
       top: 77.1%
@@ -228,7 +227,7 @@ elements:
       paper-item-icon-active-color: var(--tirecolorrr)
       transform: scale(1.5,1.5)
   - type: custom:button-card
-    entity: lock.ioniq_5_door_lock
+    entity: #place car lock sensor here
     name: Doors
     color: greenn
     tap_action:
@@ -261,7 +260,7 @@ elements:
       top: 56.1%
       left: 50%
   - type: custom:slider-entity-row
-    entity: number.ioniq_5_dc_charging_limit
+    entity: #place charger limit here for dc
     name: DC Limit
     style:
       top: 95.1%
@@ -270,7 +269,7 @@ elements:
       font-family: poxel
       transform: scale(0.9,0.9)
   - type: custom:slider-entity-row
-    entity: number.ioniq_5_ac_charging_limit
+    entity: #place charger limit here for ac
     name: AC Limit
     style:
       top: 92.1%
@@ -279,7 +278,7 @@ elements:
       font-family: poxel
       transform: scale(0.9,0.9)
   - type: state-icon
-    entity: binary_sensor.ioniq_5_washer_fluid_warning
+    entity: #place washer fluid sensor here
     icon: mdi:wiper-wash
     style:
       top: 16.1%
@@ -296,13 +295,13 @@ elements:
       paper-item-icon-active-color: var(--defrost)
       transform: scale(1.5,1.5)
   - type: state-icon
-    entity: binary_sensor.ioniq_5_back_window_heater
+    entity: #place back window heater here
     style:
       top: 84.1%
       left: 46%
       transform: scale(1.5,1.5)
   - type: state-label
-    entity: sensor.ioniq_5_odometer
+    entity: #place odometer sensor here
     style:
       top: 95.1%
       left: 15%
@@ -319,7 +318,7 @@ elements:
       pointer-events: none
       transform: scale(2.5)
   - type: state-label
-    entity: sensor.ioniq_5_set_temperature
+    entity: #place set temp sensor here
     style:
       top: 1%
       left: 73%
@@ -338,9 +337,9 @@ elements:
       color: AliceBlue
       line-height: 30x
       font-size: 30x
-      font-family: var(--font-family
+      font-family: var(--font-family)
   - type: image
-    entity: sensor.ioniq5_battery
+    entity: #traction battery sensor here
     tap_action:
       action: more-info
     image: /local/ioniqb/ioniq-battery/bg.png
@@ -363,14 +362,13 @@ elements:
       style: |
         ha-card {
           box-shadow: none;
-        }     
+        }
 card_mod:
-  class: soft-ui
   style: |
     ha-card {
-      --tirecolorl: {% if states('binary_sensor.ioniq_5_tire_pressure_front_left') "off" %} green {% else %} red {% endif %};
-      --tirecolorr: {% if states('binary_sensor.ioniq_5_tire_pressure_front_right') "off" %} green {% else %} red {% endif %};
-      --tirecolorrr: {% if states('binary_sensor.ioniq_5_tire_pressure_rear_left') "off" %} green {% else %} red {% endif %};
-      --tirecolorrl: {% if states('binary_sensor.ioniq_5_tire_pressure_rear_right') "off" %} green {% else %} red {% endif %};
-      --washerfluid: {% if states('sensor.ioniq_5_car_battery_level') "off" %} green {% else %} red {% endif %};
+      --tirecolorl: {% if states('place front left tire sensor here') "off" %} green {% else %} red {% endif %};
+      --tirecolorr: {% if states('place front right tire sensor here') "off" %} green {% else %} red {% endif %};
+      --tirecolorrr: {% if states('place rear left tire sensor here') "off" %} green {% else %} red {% endif %};
+      --tirecolorrl: {% if states('place rear right tire sensor here') "off" %} green {% else %} red {% endif %};
+      --washerfluid: {% if states('place washer fluid sensor here') "off" %} green {% else %} red {% endif %};
     }
