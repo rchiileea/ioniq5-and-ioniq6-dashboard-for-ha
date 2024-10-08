@@ -1,6 +1,7 @@
 # ioniq5-dashboard-for-ha
 custom card layouts with images for home assistant for the ionic 5
 
+Update added charge port icon for battery level and also added ioniq 6 version
 
 ![logo](https://github.com/rchiileea/ioniq5-dashboard-for-ha/blob/main/Screenshot%202024-06-25%20161326.png).
 
@@ -61,3 +62,48 @@ elements:
 
 Sit back enjoy, Ill update the code if I add anymore (or if integration gets buttons added for start and stop charge in the future)
 
+Ioniq 6 owners please use these images for your 6
+
+for Left hand drive
+
+------------------------------------------------------------
+
+type: picture-elements
+image: /local/ioniqb/ioniq6-top-lhd.png
+elements:
+  - type: image
+    entity: device_tracker.ioniq5_device_tracker
+    image: /local/ioniqb/ioniq5-top-rhd.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_steering_wheel_heater
+    state_image:
+      'off': /local/ioniqb/wheel.png
+      'on': /local/ioniqb/wheel-on.png
+--------------------------------------------------------------
+
+For right hand drive
+
+------------------------------------------------------------
+
+type: picture-elements
+image: /local/ioniqb/ioniq5-top-rhd.png
+elements:
+  - type: image
+    entity: device_tracker.ioniq5_device_tracker
+    image: /local/ioniqb/ioniq5-top-rhd.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_steering_wheel_heater
+    state_image:
+      'off': /local/ioniqb/wheel.png
+      'on': /local/ioniqb/wheel-on.png
+--------------------------------------------------------------
