@@ -1,0 +1,139 @@
+type: picture-elements
+image: /local/ioniq6a/ioniq6-back.png
+elements:
+  - type: image
+    entity: PUT YOUR DOOR LOCK SENSOR HERE
+    image: /local/ioniq6a/ioniq6-back.png
+    style:
+      left: 50%
+      top: 50%
+      width: 120%
+  - type: image
+    entity: sensor.ioniq_battery_dots
+    tap_action:
+      action: none
+    image: /local/ioniq2/centre-squares.png
+    state_image:
+      "10": /local/ioniq6a/10.png
+      "20": /local/ioniq6a/20.png
+      "30": /local/ioniq6a/30.png
+      "40": /local/ioniq6a/40.png
+      "50": /local/ioniq6a/50.png
+      "60": /local/ioniq6a/60.png
+      "70": /local/ioniq6a/70.png
+      "80": /local/ioniq6a/80.png
+      "90": /local/ioniq6a/90.png
+      "100": /local/ioniq6a/100.png
+    style:
+      left: 50%
+      top: 50%
+      width: 120%
+      heigth: 100%
+      style: |
+        ha-card {
+          box-shadow: none;
+        }
+           
+  - type: custom:button-card
+    entity: PUT YOUR RANGE SENSOR HERE
+    color: auto
+    size: 20%
+    name: GuessOmeter
+    show_name: false
+    show_state: true
+    show_icon: false
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 4/1
+        - border-radius: 20px
+        - box-shadow: none
+      grid:
+        - grid-template-columns: 1fr
+      name:
+        - font-size: 80%
+        - padding-right: null
+        - padding-bottom: 0%
+        - color: white
+        - font-family: poxel
+      state:
+        - font-size: 90%
+        - color: white
+        - font-family: poxel
+    card_mod: null
+    style:
+      left: 50%
+      top: 79.5%
+      width: 24%
+  - type: image
+    entity: PUT YOUR EV BATTERY PLUG SENSOR HERE
+    state_image:
+      "off": /local/ioniqa/unplugged.png
+      "on": /local/ioniqa/pluggedin.png
+    style:
+      top: 43%
+      left: 87%
+      width: 11%
+      transform: initial
+  - type: custom:button-card
+    entity: PUT YOUR KEY FOB SENSOR HERE
+    icon: phu:car-fob
+    size: 100%
+    show_name: false
+    show_icon: true
+    show_state: false
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 1/1
+        - border-radius: 20px
+        - size: 00%
+        - box-shadow: none
+        - background: transparent
+      grid:
+        - grid-template-columns: 1fr
+        - grid-template-areas: "\" i n s\" \" i n s\" \" i n s\""
+      icon:
+        - color: green
+    state:
+      - value: "on"
+        styles:
+          card:
+            - aspect-ratio: 1/1
+            - border-radius: 20px
+            - size: 00%
+          grid:
+            - grid-template-columns: 1fr
+            - grid-template-areas: "\" i n s\" \" i n s\" \" i n s\""
+          icon:
+            - color: red
+        card_mod:
+          class: hki
+          style: |
+            ha-card {
+              box-shadow: none;
+              background: transparent;
+            }
+    style:
+      top: 13%
+      left: 8%
+      width: 20%
+  - type: image
+    entity: sensor.ioniq_battery_percentage_state
+    state_image:
+      "0": /local/chargeport/state-0.gif
+      "1": /local/chargeport/state-1.gif
+      "2": /local/chargeport/state-2.gif
+      "3": /local/chargeport/state-3.gif
+      "4": /local/chargeport/ioniq-state-fully-charged.png
+      "6": /local/chargeport/state-6.png
+      "7": /local/chargeport/state-7.png
+      "8": /local/chargeport/state-8.png
+      "9": /local/chargeport/state-9.png
+      "10": /local/chargeport/state-10.png
+    style:
+      left: 65%
+      top: 71%
+      width: 90%

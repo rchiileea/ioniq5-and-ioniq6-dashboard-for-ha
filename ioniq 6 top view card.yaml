@@ -1,0 +1,413 @@
+type: picture-elements
+image: /local/ioniq6b/ioniq6-top-rhd.png
+elements:
+  - type: image
+    entity: PUT YOUR CAR DEVICE TRACKER SENSOR HERE
+    image: /local/ioniq6b/ioniq6-top-rhd.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: PUT YOUR STEERING WHEEL HEATER HERE
+    state_image:
+      "on": /local/ioniq6b/wheel-on.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: PUT YOUR LEFT FRONT DOOR SENSOR HERE
+    state_image:
+      "off": /local/ioniq6b/ioniq6-front-left.png
+      "on": /local/ioniq6b/ioniq6-front-left-open.png
+    style:
+      left: 49.5%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: PUT YOUR RIGHT FRONT DOOR SENSOR HERE
+    state_image:
+      "off": /local/ioniq6b/ioniq6-front-right.png
+      "on": /local/ioniq6b/ioniq6-front-right-open.png
+    style:
+      left: 49.5%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: PUT YOUR LEFT REAR DOOR SENSOR HERE
+    state_image:
+      "off": /local/ioniq6b/ioniq6-rear-left.png
+      "on": /local/ioniq6b/ioniq6-rear-left-open.png
+    style:
+      left: 49.5%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: PUT YOUR RIGHT REAR DOOR SENSOR HERE
+    state_image:
+      "off": /local/ioniq6b/ioniq6-rear-right.png
+      "on": /local/ioniq6b/ioniq6-rear-right-open.png
+    style:
+      left: 49.5%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: PUT YOUR HOOD SENSOR HERE
+    state_image:
+      "off": /local/ioniq6b/ioniq6-hood.png
+      "on": /local/ioniq6b/ioniq6-hood-open.png
+    style:
+      left: 49.5%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: PUT YOUR TRUNCK SENSOR HERE
+    state_image:
+      "off": /local/ioniq6b/ioniq6-hatch.png
+      "on": /local/ioniq6b/ioniq6-hatch-open.png
+    style:
+      left: 49.5%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: custom:button-card
+    entity: PUT YOUR AIRCON SENSOR HERE
+    icon: mdi:fan
+    name: Climate
+    tap_action:
+      action: toggle
+      haptic: medium
+    hold_action:
+      action: more-info
+      haptic: medium
+    styles:
+      card:
+        - background-color: transparent
+      grid:
+        - grid-template-areas: "\"i\" \"n\""
+        - grid-template-columns: 1fr
+      name:
+        - font-family: poxel
+    state:
+      - value: "on"
+        styles:
+          icon:
+            - animation: rotating 1s linear infinite
+            - filter: drop-shadow(0px 0px 4px teal) drop-shadow(0px 0px 4px teal)
+          name:
+            - color: yellow
+            - filter: drop-shadow(0px 0px 4px teal) drop-shadow(0px 0px 4px teal)
+    style:
+      top: 42%
+      left: 50%
+      transform: translate(-50%,-50%) scale(0.1,0.1)
+    card_mod:
+      style: |
+        ha-card {
+          box-shadow: none;
+          background: transparent;
+        }
+  - type: custom:button-card
+    entity: PUT YOUR 12V SENSOR HERE
+    name: 12V
+    show_name: false
+    show_icon: false
+    show_state: true
+    hold_action:
+      action: default
+    styles:
+      card:
+        - border-radius: 20px
+        - size: 50%
+        - box-shadow: none
+      icon:
+        - size: 80%
+      name:
+        - font-family: poxel
+        - padding-right: 10%
+      state:
+        - font-family: poxel
+        - font-size: 140%
+        - color: |
+            [[[ 
+               if (entity.state <= 50) return 'red';
+               else if (entity.state <= 75) return 'orange';
+               else if (entity.state <= 100) return 'green';
+               else return 'red';
+            ]]]
+    card_mod:
+      style: |
+        ha-card {
+          border-width: 0px;
+          background: transparent;
+        }
+    style:
+      top: 10%
+      left: 58%
+  - type: custom:button-card
+    entity: PUT YOUR 12V SENSOR HERE
+    name: 12V
+    show_name: false
+    show_icon: true
+    show_state: false
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 1/1
+        - border-radius: 20px
+        - size: 50%
+        - box-shadow: none
+      grid:
+        - grid-template-columns: 1fr
+        - grid-template-areas: "\" i n s\" \" i n s\" \" i n s\""
+      icon:
+        - color: |
+            [[[ 
+               if (entity.state <= 50) return 'red';
+               else if (entity.state <= 75) return 'orange';
+               else if (entity.state <= 100) return 'green';
+               else return 'red';
+            ]]]
+    card_mod:
+      class: hki
+      style: |
+        ha-card {
+          border-width: 0px;
+          background: transparent;
+        }
+    style:
+      top: 10%
+      left: 43%
+  - type: custom:button-card
+    entity: sensor.ioniq_average_energy_consumption_mi_kwh
+    color: auto
+    size: 20%
+    name: M/kWh
+    show_name: true
+    show_state: true
+    show_icon: false
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 3/1
+        - border-radius: 20px
+        - box-shadow: none
+      grid:
+        - grid-template-columns: 1fr
+      name:
+        - font-size: 80%
+        - padding-right: null
+        - padding-bottom: 0%
+        - color: white
+        - font-family: poxel
+      state:
+        - font-size: 90%
+        - color: white
+        - font-family: poxel
+    card_mod:
+      style: |
+        ha-card {
+          box-shadow: none;
+          background: transparent;
+          border-width: 0px;
+        }
+    style:
+      left: 8%
+      top: 92.5%
+      width: 24%
+  - type: state-icon
+    entity: PUT YOUR LEFT FRONT TIRE SENSOR HERE
+    icon: mdi:car-tire-alert
+    style:
+      "--paper-item-icon-color": green
+      top: 18.1%
+      left: 12%
+      paper-item-icon-color: green
+      paper-item-icon-active-color: var(--tirecolorl)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: PUT YOUR RIGHT FRONT TIRE SENSOR HERE
+    icon: mdi:car-tire-alert
+    style:
+      "--paper-item-icon-color": green
+      top: 18.1%
+      left: 80%
+      paper-item-icon-color: green
+      paper-item-icon-active-color: var(--tirecolorr)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: PUT YOUR LEFT REAR TIRE SENSOR HERE
+    icon: mdi:car-tire-alert
+    style:
+      top: 77.1%
+      left: 12%
+      "--paper-item-icon-color": green
+      paper-item-icon-active-color: var(--tirecolorrl)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: PUT YOUR RIGHT REAR TIRE SENSOR HERE
+    icon: mdi:car-tire-alert
+    style:
+      top: 77.1%
+      left: 80%
+      color: green
+      "--paper-item-icon-color": green
+      paper-item-icon-active-color: var(--tirecolorrr)
+      transform: scale(1.5,1.5)
+  - type: custom:button-card
+    entity: PUT YOUR DOOR LOCKS SENSOR HERE
+    name: Doors
+    color: greenn
+    tap_action:
+      action: toggle
+      haptic: medium
+    hold_action:
+      action: more-info
+      haptic: medium
+    styles:
+      card:
+        - background-color: transparent
+      icon:
+        - color: green
+      grid:
+        - grid-template-areas: "\"i\" \"n\""
+        - grid-template-columns: 1fr
+      name:
+        - color: green
+        - font-family: poxel
+    state:
+      - value: unlocked
+        icon: mdi:lock-open-alert
+        styles:
+          icon:
+            - color: red
+            - animation: blink 2s ease infinite
+          name:
+            - color: red
+    style:
+      top: 56.1%
+      left: 50%
+    card_mod:
+      class: hki
+      style: |
+        ha-card {
+          border-width: 0px;
+          background: transparent;
+        }
+  - type: custom:slider-entity-row
+    entity: PUT YOUR DC CHARGING LIMIT ENTITY HERE
+    name: DC Limit
+    style:
+      top: 95.1%
+      left: 43%
+      width: 59%
+      font-family: poxel
+      transform: scale(0.9,0.9)
+  - type: custom:slider-entity-row
+    entity: PUT YOUR AC CHARGING LIMIT ENTITY HERE
+    name: AC Limit
+    style:
+      top: 92.1%
+      left: 43%
+      width: 59%
+      font-family: poxel
+      transform: scale(0.9,0.9)
+  - type: state-icon
+    entity: PUT YOUR WASHER FLUID SENSOR HERE
+    icon: mdi:wiper-wash
+    style:
+      top: 24.1%
+      left: 28%
+      "--paper-item-icon-color": green
+      paper-item-icon-active-color: var(--washerfluid)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: PUT YOUR FRONT DEFROST SENSOR HERE
+    style:
+      top: 27.1%
+      left: 46%
+      "--paper-item-icon-color": white
+      paper-item-icon-active-color: var(--defrost)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: PUT YOUR REAR DEFROST SENSOR HERE
+    style:
+      top: 74.1%
+      left: 46%
+      transform: scale(1.5,1.5)
+      "--paper-item-icon-color": white
+  - type: state-label
+    entity: PUT YOUR ODOMETER SENSOR HERE IF YOU HAVE IT
+    style:
+      top: 95.1%
+      left: 15%
+      pointer-events: none
+      transform: initial
+      font-size: 21px
+      font-family: poxel
+      line-height: 30px
+  - type: icon
+    icon: phu:odometer
+    style:
+      top: 96.5%
+      left: 5%
+      pointer-events: none
+      transform: scale(2.5)
+  - type: state-label
+    entity: PUT YOUR SET TEMPRATURE SENSOR HERE
+    style:
+      top: 1%
+      left: 73%
+      pointer-events: none
+      transform: initial
+      font-size: 25px
+      font-family: poxel
+      line-height: 30px
+  - type: icon
+    icon: mdi:thermometer
+    style:
+      top: 2.4%
+      left: 92.5%
+      pointer-events: none
+      transform: scale(1.4)
+      color: AliceBlue
+      line-height: 30x
+      font-size: 30x
+      font-family: var(--font-family)
+  - type: image
+    entity: sensor.ioniq_battery_percentage_state
+    state_image:
+      "0": /local/chargeport/state-0.gif
+      "1": /local/chargeport/state-1.gif
+      "2": /local/chargeport/state-2.gif
+      "3": /local/chargeport/state-3.gif
+      "4": /local/chargeport/ioniq-state-fully-charged.png
+      "6": /local/chargeport/state-6.png
+      "7": /local/chargeport/state-7.png
+      "8": /local/chargeport/state-8.png
+      "9": /local/chargeport/state-9.png
+      "10": /local/chargeport/state-10.png
+    style:
+      left: 42%
+      top: 71%
+      width: 150%
+card_mod:
+  class: soft-ui
+  style: |
+    ha-card {
+      --tirecolorl: {% if states('binary_sensor.ioniq_5_tire_pressure_front_left') "off" %} green {% else %} red {% endif %};
+      --tirecolorr: {% if states('binary_sensor.ioniq_5_tire_pressure_front_right') "off" %} green {% else %} red {% endif %};
+      --tirecolorrr: {% if states('binary_sensor.ioniq_5_tire_pressure_rear_left') "off" %} green {% else %} red {% endif %};
+      --tirecolorrl: {% if states('binary_sensor.ioniq_5_tire_pressure_rear_right') "off" %} green {% else %} red {% endif %};
+      --washerfluid: {% if states('sensor.ioniq_5_car_battery_level') "off" %} green {% else %} red {% endif %};
+    }

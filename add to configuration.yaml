@@ -1,0 +1,61 @@
+#ioniq5 tst battery sensor
+  - platform: template
+    sensors:
+      ioniq_battery_dot_state:
+        friendly_name: 'ioniq battery state'
+        unique_id: 10n1qbatt3ry
+        value_template: >-
+          {{ states('PUT YOUR EV BATTERY LEVEL SENSOR HERE') | round(-1, 'ceil', 0) | int }}
+
+  - platform: template
+    sensors:
+      blank_blank:
+        friendly_name: "Blank Blank"
+        value_template: " "
+
+#ioniq 5 charging port graphic
+  - platform: template
+    sensors:
+      ioniq_battery_port_state:
+        friendly_name: 'ioniq battery port state'
+        unique_id: 10n1qbatt3ryp3rc3ntag3
+        value_template: >
+          {% set charging = is_state('PUT YOUR BATTERY CHARGE SENSOR HERE', 'on') %}
+          {% set battery_level = states('PUT YOUR EV BATTERY LEVEL SENSOR HERE') | int %}
+          {% if charging %}
+            {% if battery_level == 0 %}
+              0
+            {% elif battery_level <= 25 %}
+              1
+            {% elif battery_level <= 50 %}
+              2
+            {% elif battery_level <= 99 %}
+              3
+            {% elif battery_level == 100 %}
+              4
+            {% else %}
+              0
+            {% endif %}
+          {% else %}
+            {% if battery_level == 0 %}
+              6
+            {% elif battery_level <= 25 %}
+              7
+            {% elif battery_level <= 50 %}
+              8
+            {% elif battery_level <= 99 %}
+              9
+            {% elif battery_level == 100 %}
+              10
+            {% else %}
+              6
+            {% endif %}
+          {% endif %}
+
+  - platform: template
+    sensors:
+      ioniq_average_energy_consumption_mi_kwh:
+        friendly_name: 'Miles Per kWh'
+        unique_id: mpkwhc0n5umpt10n
+        value_template: >
+          {{ (621.371192237334 / states('PUT YOUR AVERAGE ENERGY CONSUPTION SENSOR HERE') | float) | round(2) }}
