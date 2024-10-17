@@ -58,3 +58,5 @@ Sit back enjoy, Ill update the code if I add anymore (or if integration gets but
 
 
 ------------------------------------------------------------
+
+Thank you to Nathan Jones from facebook for the alt rear view idea and input and Carton on HA discord for help with the charge port code
