@@ -18,7 +18,7 @@ Download from hacs the Hyundai bluelink integration, custom brand icons, card mo
 
 3.	First Start off adding the Fonts and files you have uploaded from fonts folder to home assistant, to do this settings/Dashboards and then click the 3 dots in the top right and click resources. Click add resource and paste /local/loadfonts.js (make sure javascript module is selected, then click add resource again and paste /local/fonts.css and this time select style sheet.
 
-4.	# NEXT GO TOO (add to configuration file.yaml) and open it, change only the test in bold and replace with the sensors asked for that you have in your hyundai/kia integration you installed.  # Double check before continuing and copy and paste it into your configeration.
+4.	# NEXT GO TOO (add to configuration file.yaml) and open it, change only the text in bold and replace with the sensors asked for that you have in your hyundai/kia integration you installed.  # Double check before continuing and copy and paste it into your configeration.
 	
 5.	Go to developer tools, scroll down and click template entities
 
