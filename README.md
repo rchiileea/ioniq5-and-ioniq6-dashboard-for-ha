@@ -3,7 +3,7 @@ custom card layouts with images for home assistant for the ionic 5
 
 Update added charge port icon for battery level and also added ioniq 6 version of tge top view card
 
-![logo]([https://github.com/rchiileea/ioniq5-dashboard-for-ha/blob/main/Screenshot%202024-06-25%20161326.png).
+![logo]([https://github.com/rchiileea/ioniq5-dashboard-for-ha/blob/main/Screenshot%202024-06-25%20161326.png)
 
 First off, let me start by what you 100% need to use this,
 
