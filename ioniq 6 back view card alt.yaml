@@ -2,7 +2,7 @@ type: picture-elements
 image: /local/ioniq6a/ioniq6-back.png
 elements:
   - type: image
-    entity: lock.ioniq_5_door_lock
+    entity: PKACE YOUR DOOR LOCK ENITITY HERE
     image: /local/ioniq6a/ioniq6-back.png
     style:
       left: 50%
@@ -34,7 +34,7 @@ elements:
           box-shadow: none;
         }
   - type: custom:button-card
-    entity: lock.ioniq_5_door_lock
+    entity: PLACE YOUR DOOR LOCK ENITY HERE
     name: Doors
     color: white
     tap_action:
@@ -73,7 +73,7 @@ elements:
       left: 7%
       width: 20%
   - type: custom:slider-entity-row
-    entity: number.ioniq_5_dc_charging_limit
+    entity: PLACE YOUR DC CHARGING LIMIT HERE
     name: DC Limit
     style:
       top: 5%
@@ -82,7 +82,7 @@ elements:
       font-family: null
       transform: scale(1,1)
   - type: custom:slider-entity-row
-    entity: number.ioniq_5_ac_charging_limit
+    entity: PLACE YOUR AC CHARGING LIMIT HERE
     name: AC Limit
     style:
       top: "-3%"
@@ -123,7 +123,7 @@ elements:
       top: 79.5%
       width: 24%
   - type: custom:button-card
-    entity: sensor.ioniq_5_ev_range
+    entity: PLACE YOUR EV RANGE SENSOR HERE
     color: auto
     size: 20%
     name: GuessOmeter
@@ -155,7 +155,7 @@ elements:
       top: 79.5%
       width: 24%
   - type: image
-    entity: binary_sensor.ioniq_5_ev_battery_plug
+    entity: PLACE YOUR EV PLUG SENSOR HERE
     state_image:
       "off": /local/ioniqa/unplugged.png
       "on": /local/ioniqa/pluggedin.png
@@ -182,7 +182,7 @@ elements:
       top: 71%
       width: 90%
   - type: custom:button-card
-    entity: sensor.ioniq_5_car_battery_level
+    entity: PLACE YOUR 12V BATTERY SENSOR HERE
     name: 12V
     show_name: false
     show_icon: true
