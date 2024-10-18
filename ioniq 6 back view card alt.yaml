@@ -1,0 +1,227 @@
+type: picture-elements
+image: /local/ioniq6a/ioniq6-back.png
+elements:
+  - type: image
+    entity: lock.ioniq_5_door_lock
+    image: /local/ioniq6a/ioniq6-back.png
+    style:
+      left: 50%
+      top: 50%
+      width: 120%
+  - type: image
+    entity: sensor.ioniq_battery_dots
+    tap_action:
+      action: none
+    image: /local/ioniq2/centre-squares.png
+    state_image:
+      "10": /local/ioniq6a/10.png
+      "20": /local/ioniq6a/20.png
+      "30": /local/ioniq6a/30.png
+      "40": /local/ioniq6a/40.png
+      "50": /local/ioniq6a/50.png
+      "60": /local/ioniq6a/60.png
+      "70": /local/ioniq6a/70.png
+      "80": /local/ioniq6a/80.png
+      "90": /local/ioniq6a/90.png
+      "100": /local/ioniq6a/100.png
+    style:
+      left: 50%
+      top: 50%
+      width: 120%
+      heigth: 100%
+      style: |
+        ha-card {
+          box-shadow: none;
+        }
+  - type: custom:button-card
+    entity: lock.ioniq_5_door_lock
+    name: Doors
+    color: white
+    tap_action:
+      action: toggle
+      haptic: medium
+    hold_action:
+      action: more-info
+      haptic: medium
+    styles:
+      card:
+        - aspect-ratio: 1/1
+        - border-radius: 20px
+        - size: 00%
+        - box-shadow: none
+        - background: transparent
+        - border: none
+      icon:
+        - color: white
+      grid:
+        - grid-template-areas: "\"i\" \"n\""
+        - grid-template-columns: 1fr
+      name:
+        - color: white
+        - font-family: null
+    state:
+      - value: unlocked
+        icon: mdi:lock-open-alert
+        styles:
+          icon:
+            - color: red
+            - animation: blink 2s ease infinite
+          name:
+            - color: red
+    style:
+      top: 17%
+      left: 7%
+      width: 20%
+  - type: custom:slider-entity-row
+    entity: number.ioniq_5_dc_charging_limit
+    name: DC Limit
+    style:
+      top: 5%
+      left: 18%
+      width: 59%
+      font-family: null
+      transform: scale(1,1)
+  - type: custom:slider-entity-row
+    entity: number.ioniq_5_ac_charging_limit
+    name: AC Limit
+    style:
+      top: "-3%"
+      left: 18%
+      width: 59%
+      font-family: null
+      transform: scale(1,1)
+  - type: custom:button-card
+    entity: sensor.ioniq_average_energy_consumption_mi_kwh
+    color: auto
+    size: 20%
+    name: M/kWh
+    show_name: true
+    show_state: true
+    show_icon: false
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 3/1
+        - border-radius: 20px
+        - box-shadow: none
+      grid:
+        - grid-template-columns: 1fr
+      name:
+        - font-size: 80%
+        - padding-right: null
+        - padding-bottom: 0%
+        - color: white
+        - font-family: poxel
+      state:
+        - font-size: 90%
+        - color: white
+        - font-family: poxel
+    card_mod: null
+    style:
+      left: 64%
+      top: 79.5%
+      width: 24%
+  - type: custom:button-card
+    entity: sensor.ioniq_5_ev_range
+    color: auto
+    size: 20%
+    name: GuessOmeter
+    show_name: true
+    show_state: true
+    show_icon: false
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 3/1
+        - border-radius: 20px
+        - box-shadow: none
+      grid:
+        - grid-template-columns: 1fr
+      name:
+        - font-size: 80%
+        - padding-right: null
+        - padding-bottom: 0%
+        - color: white
+        - font-family: poxel
+      state:
+        - font-size: 90%
+        - color: white
+        - font-family: poxel
+    card_mod: null
+    style:
+      left: 35%
+      top: 79.5%
+      width: 24%
+  - type: image
+    entity: binary_sensor.ioniq_5_ev_battery_plug
+    state_image:
+      "off": /local/ioniqa/unplugged.png
+      "on": /local/ioniqa/pluggedin.png
+    style:
+      top: 43%
+      left: 87%
+      width: 11%
+      transform: initial
+  - type: image
+    entity: sensor.ioniq_battery_percentage_state
+    state_image:
+      "0": /local/chargeport/state-0.gif
+      "1": /local/chargeport/state-1.gif
+      "2": /local/chargeport/state-2.gif
+      "3": /local/chargeport/state-3.gif
+      "4": /local/chargeport/ioniq-state-fully-charged.png
+      "6": /local/chargeport/state-6.png
+      "7": /local/chargeport/state-7.png
+      "8": /local/chargeport/state-8.png
+      "9": /local/chargeport/state-9.png
+      "10": /local/chargeport/state-10.png
+    style:
+      left: 65%
+      top: 71%
+      width: 90%
+  - type: custom:button-card
+    entity: sensor.ioniq_5_car_battery_level
+    name: 12V
+    show_name: false
+    show_icon: true
+    show_state: true
+    hold_action:
+      action: default
+    styles:
+      card:
+        - border-radius: 20px
+        - box-shadow: none
+        - background: transparent
+        - border: none
+      icon:
+        - color: white
+        - scale: 180%
+        - padding-top: 1px
+      grid:
+        - grid-template-areas: "\"i\" \"s\""
+        - grid-template-columns: 1fr
+      name:
+        - color: white
+        - font-family: null
+      state:
+        - font-size: 10px
+        - padding-top: 10px
+        - color: |
+            [[[ 
+               if (entity.state <= 50) return 'red';
+               else if (entity.state <= 75) return 'orange';
+               else if (entity.state <= 100) return 'white';
+               else return 'red';
+            ]]]
+    card_mod:
+      style: |
+        ha-card {
+          box-shadow: none;
+          background: transparent;
+        }
+    style:
+      top: 21%
+      left: 94%
+      scale: 170%
