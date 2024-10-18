@@ -33,7 +33,7 @@ Download from hacs the Hyundai bluelink integration, custom brand icons, card mo
 
 ------------------------------------------------------------
 
-'''
+```
 type: picture-elements
 image: /local/ioniq5b/ioniq5-top-lhd.png ((or for 6 users use /local/ioniq6b/ioniq6-top-lhd.png )
 elements:
@@ -51,7 +51,7 @@ elements:
     state_image:
       'off': /local/ioniq5b/wheel--lhd.png 
       'on': /local/ioniq5b/wheel-on--lhd.png  (ioniq 6 users only need to change this entity to ---  'on': /local/ioniq6b/wheel-on--lhd.png
-'''
+```
 
 --------------------------------------------------------------
 
