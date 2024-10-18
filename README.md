@@ -18,13 +18,13 @@ Download from hacs the Hyundai bluelink integration, custom brand icons, card mo
 
 3.	First Start off adding the Fonts and files you have uploaded from fonts folder to home assistant, to do this settings/Dashboards and then click the 3 dots in the top right and click resources. Click add resource and paste /local/loadfonts.js (make sure javascript module is selected, then click add resource again and paste /local/fonts.css and this time select style sheet.
 
-4.	# NEXT GO TOO (add to configuration file.yaml) and open it, change only the text in bold and replace with the sensors asked for that you have in your hyundai/kia integration you installed.  # Double check before continuing and copy and paste it into your configeration.
+4.	NEXT OPEN THE configuration file.yaml you downloaded and open it, change only the text in bold and replace with the sensors asked for that you have in your hyundai/kia integration you installed.  # Double check before continuing once you are sure its right, open your home assistant and go to studio code (or via file browser if you have samba setup) open the configuration.yaml in home assistant and copy and paste the text into your configuration.yaml in home assistant.
 	
-5.	Go to developer tools, scroll down and click template entities
+5.	Go to developer tools, stay on the the yaml tab and  scroll down and click on template entities
 
-6.	Decide if you want both top down and rear view, the actual two bottow ones in the pic are the alt versions.
+6.	Decide if you want both top down and rear view, or just one of the two bottom ones from the photo are the alt versions.
 
-7.	Now open up the yaml of your choice, the ioniq 5 ones are filled in already, but for the ioniq 6 you have to open the yaml file from here and change the entities to the ones for your car, sorry I could not do this as I dont have a ioniq 6 to get the correct entites from.
+7.	once you have decided if you want the two seperate cards or single alt one, double click the ones you downloaded (warning I dont have a ioniq 6 so you will have to change the the caps lock sensors to match yours, once this is done follow the rest of the insturctions)  copy this, open up the page in home assistant that you want the cards on, click add, then choose manual and then paste the content from the downloaded ioniq 6/5 back, top or alt files in, click save job done.
 
 
 
