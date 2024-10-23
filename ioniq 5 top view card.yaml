@@ -118,7 +118,7 @@ elements:
       left: 50%
       transform: translate(-50%,-50%) scale(0.1,0.1)
   - type: custom:button-card
-    entity: sensor.la_luna_car_battery_level
+    entity: sensor.ioniq_5_car_battery_level
     name: 12V
     show_name: false
     show_icon: true
