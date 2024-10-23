@@ -121,21 +121,27 @@ elements:
     entity: sensor.ioniq_5_car_battery_level
     name: 12V
     show_name: false
-    show_icon: false
+    show_icon: true
     show_state: true
     hold_action:
       action: default
     styles:
       card:
-        - aspect-ratio: 2/
-        - border-radius: 20px
-        - size: 50%
+        - width: 150px
+        - left: 40px
         - box-shadow: none
       grid:
         - grid-template-columns: 1fr
         - grid-template-areas: "\" i n s\" \" i n s\" \" i n s\""
       icon:
-        - size: 80%
+        - size: 50%
+        - color: |
+            [[[ 
+               if (entity.state <= 50) return 'red';
+               else if (entity.state <= 75) return 'orange';
+               else if (entity.state <= 100) return 'green';
+               else return 'red';
+            ]]]
       name:
         - font-family: poxel
         - padding-right: 10%
@@ -158,45 +164,8 @@ elements:
         }
     style:
       top: 8.5%
-      left: 58%
+      left: 40%
       size: 200%
-  - type: custom:button-card
-    entity: sensor.ioniq_5_car_battery_level
-    name: 12V
-    show_name: false
-    show_icon: true
-    show_state: false
-    hold_action:
-      action: default
-    styles:
-      card:
-        - aspect-ratio: 1/1
-        - border-radius: 20px
-        - size: 50%
-        - box-shadow: none
-      grid:
-        - grid-template-columns: 1fr
-        - grid-template-areas: "\" i n s\" \" i n s\" \" i n s\""
-      icon:
-        - size: 50%
-        - color: |
-            [[[ 
-               if (entity.state <= 50) return 'red';
-               else if (entity.state <= 75) return 'orange';
-               else if (entity.state <= 100) return 'green';
-               else return 'red';
-            ]]]
-    card_mod:
-      style: |
-        ha-card {
-          box-shadow: none;
-          background: transparent;
-          border-width: 0px;
-        }
-    style:
-      top: 8%
-      left: 37%
-      size: 50%
   - type: custom:button-card
     entity: sensor.ioniq_average_energy_consumption_mi_kwh
     color: auto
