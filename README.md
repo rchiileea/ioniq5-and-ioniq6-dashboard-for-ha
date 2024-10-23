@@ -7,6 +7,8 @@
 
 First off, let me start by what you 100% need to use this,
 
+For ioniq 5 N use the ioniq 5 n yaml's and the ioniqna and ioniqnb folders instead.
+
 IF you have a 2024 ioniq 5, please check your entities and if they contain 2024 before the name if so replace all code with 2024_ioniq_5 instead of ioniq_5
 
 Download from hacs the Hyundai bluelink integration, custom brand icons, card mod, slider-entity-row and custom button-card, also install ftp addon from addons as it will make this easier.
