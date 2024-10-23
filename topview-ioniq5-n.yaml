@@ -1,0 +1,421 @@
+type: picture-elements
+image: /local/ioniqnb/ioniq5-top-rhd.png
+elements:
+  - type: image
+    entity: sensor.ioniq_5_data
+    image: /local/ioniqnb/ioniq5-top-rhd.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+    state_filter: {}
+  - type: image
+    entity: binary_sensor.ioniq_5_steering_wheel_heater
+    state_image:
+      "off": /local/ioniqnb/ioniq5-top-rhd.png
+      "on": /local/ioniqb/wheel-on.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_front_left_door
+    state_image:
+      "off": /local/ioniqnb/ioniq-front-left.png
+      "on": /local/ioniqnb/ioniq-front-left-open.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_front_right_door
+    state_image:
+      "off": /local/ioniqnb/ioniq-front-right.png
+      "on": /local/ioniqb/ioniq-front-right-open.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_back_left_door
+    state_image:
+      "off": /local/ioniqnb/ioniq-rear-left.png
+      "on": /local/ioniqnb/ioniq-rear-left-open.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_back_right_door
+    state_image:
+      "off": /local/ioniqnb/ioniq-rear-right.png
+      "on": /local/ioniqnb/ioniq-rear-right-open.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_hood
+    state_image:
+      "off": /local/ioniqnb/ioniq-hood.png
+      "on": /local/ioniqnb/ioniq-hood-open.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: image
+    entity: binary_sensor.ioniq_5_trunk
+    state_image:
+      "off": /local/ioniqnb/ioniq-hatch.png
+      "on": /local/ioniqnb/ioniq-hatch-open.png
+    style:
+      left: 50%
+      top: 50%
+      width: 100%
+      heigth: 100%
+  - type: custom:button-card
+    entity: binary_sensor.ioniq_5_air_conditioner
+    icon: mdi:fan
+    name: Climate
+    tap_action:
+      action: toggle
+      haptic: medium
+    hold_action:
+      action: more-info
+      haptic: medium
+    styles:
+      icon:
+        - color: white
+      card:
+        - background-color: transparent
+      name:
+        - font-family: poxel
+    state:
+      - value: "on"
+        styles:
+          icon:
+            - animation: rotating 1s linear infinite
+            - filter: drop-shadow(0px 0px 4px teal) drop-shadow(0px 0px 4px teal)
+          name:
+            - color: yellow
+            - filter: drop-shadow(0px 0px 4px teal) drop-shadow(0px 0px 4px teal)
+    card_mod:
+      style: |
+        ha-card {
+          box-shadow: none;
+          background: transparent;
+          border-width: 0px;
+        }
+    style:
+      top: 48%
+      left: 50%
+  - type: custom:button-card
+    entity: sensor.ioniq_5_car_battery_level
+    name: 12V
+    show_name: false
+    show_icon: false
+    show_state: true
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 2/
+        - border-radius: 20px
+        - size: 50%
+        - box-shadow: none
+      grid:
+        - grid-template-columns: 1fr
+        - grid-template-areas: "\" i n s\" \" i n s\" \" i n s\""
+      icon:
+        - size: 80%
+      name:
+        - font-family: poxel
+        - padding-right: 10%
+      state:
+        - font-family: poxel
+        - font-size: 140%
+        - color: |
+            [[[ 
+               if (entity.state <= 50) return 'red';
+               else if (entity.state <= 75) return 'orange';
+               else if (entity.state <= 100) return 'white';
+               else return 'red';
+            ]]]
+    card_mod:
+      style: |
+        ha-card {
+          box-shadow: none;
+          background: transparent;
+          border-width: 0px;
+        }
+    style:
+      top: 8.5%
+      left: 58%
+      size: 200%
+  - type: custom:button-card
+    entity: sensor.ioniq_5_car_battery_level
+    name: 12V
+    show_name: false
+    show_icon: true
+    show_state: false
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 1/1
+        - border-radius: 20px
+        - size: 50%
+        - box-shadow: none
+      grid:
+        - grid-template-columns: 1fr
+        - grid-template-areas: "\" i n s\" \" i n s\" \" i n s\""
+      icon:
+        - size: 50%
+        - color: |
+            [[[ 
+               if (entity.state <= 50) return 'red';
+               else if (entity.state <= 75) return 'orange';
+               else if (entity.state <= 100) return 'white';
+               else return 'red';
+            ]]]
+    card_mod:
+      style: |
+        ha-card {
+          box-shadow: none;
+          background: transparent;
+          border-width: 0px;
+        }
+    style:
+      top: 8%
+      left: 37%
+      size: 50%
+  - type: custom:button-card
+    entity: sensor.ioniq_average_energy_consumption_mi_kwh
+    color: auto
+    size: 20%
+    name: M/kWh
+    show_name: true
+    show_state: true
+    show_icon: false
+    hold_action:
+      action: default
+    styles:
+      card:
+        - aspect-ratio: 3/1
+        - border-radius: 20px
+        - box-shadow: none
+      grid:
+        - grid-template-columns: 1fr
+      name:
+        - font-size: 80%
+        - padding-right: null
+        - padding-bottom: 0%
+        - color: white
+        - font-family: poxel
+      state:
+        - font-size: 90%
+        - color: white
+        - font-family: poxel
+    card_mod:
+      style: |
+        ha-card {
+          box-shadow: none;
+          background: transparent;
+          border-width: 0px;
+        }
+    style:
+      left: 8%
+      top: 92.5%
+      width: 24%
+  - type: state-icon
+    entity: binary_sensor.ioniq_5_tire_pressure_front_left
+    icon: mdi:car-tire-alert
+    style:
+      "--paper-item-icon-color": green
+      top: 18.1%
+      left: 12%
+      paper-item-icon-color: green
+      paper-item-icon-active-color: var(--tirecolorl)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: binary_sensor.ioniq_5_tire_pressure_front_right
+    icon: mdi:car-tire-alert
+    style:
+      "--paper-item-icon-color": green
+      top: 18.1%
+      left: 80%
+      paper-item-icon-color: green
+      paper-item-icon-active-color: var(--tirecolorr)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: binary_sensor.ioniq_5_tire_pressure_rear_left
+    icon: mdi:car-tire-alert
+    style:
+      top: 77.1%
+      left: 12%
+      "--paper-item-icon-color": green
+      paper-item-icon-active-color: var(--tirecolorrl)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: binary_sensor.ioniq_5_tire_pressure_rear_right
+    icon: mdi:car-tire-alert
+    style:
+      top: 77.1%
+      left: 80%
+      color: green
+      "--paper-item-icon-color": green
+      paper-item-icon-active-color: var(--tirecolorrr)
+      transform: scale(1.5,1.5)
+  - type: custom:button-card
+    entity: lock.ioniq_5_door_lock
+    name: Doors
+    color: greenn
+    tap_action:
+      action: toggle
+      haptic: medium
+    hold_action:
+      action: more-info
+      haptic: medium
+    styles:
+      card:
+        - box-shadow: none
+        - background: transparent
+        - border: none
+      icon:
+        - color: green
+      grid:
+        - grid-template-areas: "\"i\" \"n\""
+        - grid-template-columns: 1fr
+      name:
+        - color: green
+        - font-family: poxel
+    state:
+      - value: unlocked
+        icon: mdi:lock-open-alert
+        styles:
+          icon:
+            - color: red
+            - animation: blink 2s ease infinite
+          name:
+            - color: red
+    style:
+      top: 62.1%
+      left: 50%
+  - type: custom:slider-entity-row
+    entity: number.ioniq_5_dc_charging_limit
+    name: DC Limit
+    style:
+      top: 95.1%
+      left: 43%
+      width: 59%
+      font-family: poxel
+      transform: scale(0.9,0.9)
+  - type: custom:slider-entity-row
+    entity: number.ioniq_5_ac_charging_limit
+    name: AC Limit
+    style:
+      top: 92.1%
+      left: 43%
+      width: 59%
+      font-family: poxel
+      transform: scale(0.9,0.9)
+  - type: state-icon
+    entity: binary_sensor.ioniq_5_washer_fluid_warning
+    icon: mdi:wiper-wash
+    style:
+      top: 16.1%
+      left: 28%
+      "--paper-item-icon-color": green
+      paper-item-icon-active-color: var(--washerfluid)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: binary_sensor.ioniq_5_defrost
+    style:
+      top: 25.1%
+      left: 46%
+      "--paper-item-icon-color": white
+      paper-item-icon-active-color: var(--defrost)
+      transform: scale(1.5,1.5)
+  - type: state-icon
+    entity: binary_sensor.ioniq_5_back_window_heater
+    style:
+      top: 84.1%
+      left: 46%
+      transform: scale(1.5,1.5)
+      "--paper-item-icon-color": white
+  - type: state-label
+    entity: sensor.ioniq_5_odometer
+    style:
+      top: 95.1%
+      left: 15%
+      pointer-events: none
+      transform: initial
+      font-size: 21px
+      font-family: poxel
+      line-height: 30px
+  - type: icon
+    icon: phu:odometer
+    style:
+      top: 96.5%
+      left: 5%
+      pointer-events: none
+      transform: scale(2.5)
+  - type: state-label
+    entity: sensor.ioniq_5_set_temperature
+    style:
+      top: 1%
+      left: 73%
+      pointer-events: none
+      transform: initial
+      font-size: 25px
+      font-family: poxel
+      line-height: 30px
+  - type: icon
+    icon: mdi:thermometer
+    style:
+      top: 2.4%
+      left: 92.5%
+      pointer-events: none
+      transform: scale(1.4)
+      color: AliceBlue
+      line-height: 30x
+      font-size: 30x
+      font-family: var(--font-family)
+  - type: image
+    entity: sensor.ioniq_battery_percentage_state
+    state_image:
+      "0": /local/chargeport/state-0.gif
+      "1": /local/chargeport/state-1.gif
+      "2": /local/chargeport/state-2.gif
+      "3": /local/chargeport/state-3.gif
+      "4": /local/chargeport/ioniq-state-fully-charged.png
+      "6": /local/chargeport/state-6.png
+      "7": /local/chargeport/state-7.png
+      "8": /local/chargeport/state-8.png
+      "9": /local/chargeport/state-9.png
+      "10": /local/chargeport/state-10.png
+    style:
+      left: 42%
+      top: 71%
+      width: 150%
+      style: |
+        ha-card {
+          box-shadow: none;
+        }
+card_mod:
+  class: soft-ui
+  style: |
+    ha-card {
+      --tirecolorl: {% if states('binary_sensor.ioniq_5_tire_pressure_front_left') "off" %} green {% else %} red {% endif %};
+      --tirecolorr: {% if states('binary_sensor.ioniq_5_tire_pressure_front_right') "off" %} green {% else %} red {% endif %};
+      --tirecolorrr: {% if states('binary_sensor.ioniq_5_tire_pressure_rear_left') "off" %} green {% else %} red {% endif %};
+      --tirecolorrl: {% if states('binary_sensor.ioniq_5_tire_pressure_rear_right') "off" %} green {% else %} red {% endif %};
+      --washerfluid: {% if states('sensor.ioniq_5_car_battery_level') "off" %} green {% else %} red {% endif %};
+    }
