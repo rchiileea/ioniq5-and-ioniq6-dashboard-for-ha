@@ -3,7 +3,7 @@
 # Custom card layouts with images for home assistant for the ionic 5 and ioniq 6
 
 
-![logo](https://raw.githubusercontent.com/rchiileea/ioniq5-and-ioniq6-dashboard-for-ha/refs/heads/main/Screenshot%202024-10-17%20155145.png](https://raw.githubusercontent.com/rchiileea/ioniq5-and-ioniq6-dashboard-for-ha/refs/heads/main/Screenshot%202024-10-23%20093930.png)
+![logo](https://raw.githubusercontent.com/rchiileea/ioniq5-and-ioniq6-dashboard-for-ha/refs/heads/main/Screenshot%202024-10-23%20093930.png)
 
 First off, let me start by what you 100% need to use this,
 
