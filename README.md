@@ -11,7 +11,13 @@ For ioniq 5 N use the ioniq 5 n yaml's and the ioniqna and ioniqnb folders inste
 
 IF you have a 2024 ioniq 5, please check your entities and if they contain 2024 before the name if so replace all code with 2024_ioniq_5 instead of ioniq_5
 
-Download from hacs the Hyundai bluelink integration, custom brand icons, card mod, slider-entity-row and custom button-card, also install ftp addon from addons as it will make this easier.
+Download the following from HACS:
+ - Hyundai bluelink integration: Kia Uvo / Hyundai Bluelink
+ - Custom brand icons
+ - card-mod
+ - slider-entity-row
+ - button-card
+also install ftp addon from addons as it will make this easier.
 
 
 1.	Upload files from fonts into your www folder (local) (not the font folder but the files within)
@@ -20,13 +26,15 @@ Download from hacs the Hyundai bluelink integration, custom brand icons, card mo
 
 3.	First Start off adding the Fonts and files you have uploaded from fonts folder to home assistant, to do this settings/Dashboards and then click the 3 dots in the top right and click resources. Click add resource and paste /local/loadfonts.js (make sure javascript module is selected, then click add resource again and paste /local/fonts.css and this time select style sheet.
 
-4.	NEXT OPEN THE configuration file.yaml you downloaded and open it, change only the text in bold and replace with the sensors asked for that you have in your hyundai/kia integration you installed.  # Double check before continuing once you are sure its right, open your home assistant and go to studio code (or via file browser if you have samba setup) open the configuration.yaml in home assistant and copy and paste the text into your configuration.yaml in home assistant.
+4.	NEXT OPEN THE file "add to configuration.yaml" you downloaded and open it, change only the text in CAPS and replace with the sensor names asked for that you have in your hyundai/kia integration you just installed. Sensor names are something like: sensor.ioniq5_ev_battery_level 
+	# Double check before continuing once you are sure its right, open your home assistant and go to studio code (or via file browser if you have samba setup) open the configuration.yaml in home assistant and copy and paste the text into your configuration.yaml in home assistant.
 	
-5.	Go to developer tools, stay on the the yaml tab and  scroll down and click on template entities
+5.	Go to developer tools, stay on the the yaml tab and  scroll down and click on TEMPLATE ENTITIES
 
 6.	Decide if you want both top down and rear view, or just one of the two bottom ones from the photo are the alt versions.
 
-7.	once you have decided if you want the two seperate cards or single alt one, double click the ones you downloaded (warning I dont have a ioniq 6 so you will have to change the the caps lock sensors to match yours, once this is done follow the rest of the insturctions)  copy this, open up the page in home assistant that you want the cards on, click add, then choose manual and then paste the content from the downloaded ioniq 6/5 back, top or alt files in, click save job done.
+7.	To add a card, open one of the "ioniq xxx view card.yaml" files in a text editor and copy the code. Add a new card on a dashboard, choose manual (very bottom) and paste the code into the text field. Make sure to delete anything that was in there before. Save. Done. Repeat for other views as desired.
+	(warning I dont have a ioniq 6 so you will have to change the the caps lock sensors to match yours, once this is done follow the rest of the insturctions)
 
 
 
