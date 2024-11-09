@@ -1,3 +1,4 @@
+sensor:
 #ioniq5 tst battery sensor
   - platform: template
     sensors:
